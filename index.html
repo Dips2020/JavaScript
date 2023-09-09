@@ -5,17 +5,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript</title>
+    <style>
+        body {
+            background: rgb(116, 113, 113);
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
     <h1>Hi👋</h1>
     <p id="myParagraph">My JavaScript learning journey...</p>
-    <button id="myButton">Click</button>
 
-    <!-- Script -->
-    <script></script>
-    <script></script>
-    <script></script>
+    <!--! localStorage -->
+    <script src="./JS/localStorage.js"></script>
+    <div class="local-storage">
+        <h1 id="idName"></h1>
+        <h2 id="idAge"></h2>
+        <h2 id="idAddress"></h2>
+        <button id="MyFunction" onclick="LocalStorage()">Add to Local Storage</button>
+
+        <!-- to clear local storage I have made a separate function in local storage -->
+        <button onclick="ClearLocalStorage()">Clear Local Storage</button>
+    </div>
+
+    <!--! Async_Await -->
+    <script src="./JS/async_await.js"></script>
+    <div class="async-await">
+        <p>Click AsyncAwait ⬇️ button</p>
+        <button onclick="AsyncAwait()">Async-Await</button>
+        <p id="idAsyncAwait"></p>
+    </div>
+
+    <!--! Synchronous_and_Asynchronous -->
+    <script src="./JS/Synchronous_Async.js"></script>
+    <div class="synchronous_and_async">
+        <button onclick="to_check_synchronous()">Check Synchronous</button>
+        <h1 id="idSynchronousName"></h1>
+        <p id="idSynchronousAddress"></p>
+    </div>
 </body>
 
 </html>
