@@ -19,16 +19,12 @@
 // //! here function -> AsyncAwait()  is calling from html
 // async function AsyncAwait() {
 //     let Show_AsyncAwait = await MyFunction();
-//     // console.log(result);
-
-//     if (Show_AsyncAwait) {
-//         // idAsyncAwait is from HTML id
-//         idAsyncAwait.innerHTML = Show_AsyncAwait;
-//     }
+//     // idAsyncAwait is from HTML id
+//     document.getElementById("idAsyncAwait").innerHTML = Show_AsyncAwait;
 // }
 
 // ------------------------------ ⬇️3⬇️ ------------------------------
-// ! this is about 2 or more return case
+//! this is about 2 or more return case
 function MyFunction() {
     let FullName = prompt("Enter your name");
     let LastName = prompt("Enter your last name");
@@ -40,12 +36,9 @@ async function AsyncAwait() {
     let Show_AsyncAwait = await MyFunction();
     // console.log(result);
 
-    if (Show_AsyncAwait) {
-        let { FullName, LastName, age } = Show_AsyncAwait;
-
-        // idAsyncAwait is from HTML id
-        document.getElementById("idAsyncAwait").innerHTML = `Full Name: ${FullName} ${LastName} <br> Age: ${age}`;
-    }
+    let { FullName, LastName, age } = Show_AsyncAwait;
+    // idAsyncAwait is from HTML id
+    document.getElementById("idAsyncAwait").innerHTML = `Full Name: ${FullName} ${LastName} <br> Age: ${age}`;
 }
 
 // ------------------------------ ⬇️4⬇️ ------------------------------
