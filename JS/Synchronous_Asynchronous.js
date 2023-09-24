@@ -32,6 +32,17 @@
 // }
 
 // ------------------------------ ⬇️4⬇️ ------------------------------
+// function to_check_synchronous() {
+//     let name = prompt("Enter your name");
+//     let surname = prompt("Enter your surname");
+//     let address = prompt("Enter your address");
+//     setTimeout(function () {
+//         document.getElementById("idSynchronous").innerHTML = `Welcome to ${address}, Mr. ${name} ${surname}`;
+//     }, 2000);
+//     document.getElementById("idSynchronousTwo").innerHTML = `Address: ${address}`;
+// }
+
+// ------------------------------ ⬇️5⬇️ ------------------------------
 //! Basic setInterval
 // function to_check_synchronous() {
 //     let interval = setInterval(function () {
@@ -44,7 +55,7 @@
 //     console.log("Hello Second");
 // }
 
-// ------------------------------ ⬇️5⬇️ ------------------------------
+// ------------------------------ ⬇️6⬇️ ------------------------------
 //  setInterval with prompt and displaying in frontend
 // function to_check_synchronous() {
 //     let n = prompt("Enter your name");
@@ -52,7 +63,7 @@
 
 //     let l = "Loading...";
 //     console.log(l);
-//     document.getElementById("idSynchronousThree").innerHTML = l;
+//     document.getElementById("idSynchronousSix").innerHTML = l;
 
 //     let interval = setInterval(function () {
 //         let name = `${n}`;
@@ -63,15 +74,15 @@
 //     }, 1000)
 // }
 
-// ------------------------------ ⬇️6⬇️ ------------------------------
-//  made the (loading...) display none in frontend
+// ------------------------------ ⬇️7⬇️ ------------------------------
+// //  made the (loading...) display none in frontend
 // function to_check_synchronous() {
 //     let n = prompt("Enter your name");
 //     let m = prompt("Enter your address");
 
 //     let l = "Loading...";
 //     console.log(l);
-//     document.getElementById("idSynchronousThree").innerHTML = l;
+//     document.getElementById("idSynchronousSix").innerHTML = l;
 
 //     let interval = setInterval(function () {
 //         let name = `${n}`;
@@ -81,19 +92,19 @@
 //         document.getElementById("idSynchronous").innerHTML = name;
 //         document.getElementById("idSynchronousTwo").innerHTML = address;
 //         // display none
-//         document.getElementById("idSynchronousThree").style.display = "none";
+//         document.getElementById("idSynchronousSix").style.display = "none";
 //     }, 1000)
 // }
 
-// ------------------------------ ⬇️7⬇️ ------------------------------
-// setting up the interval count and displaying in frontend
+// ------------------------------ ⬇️8⬇️ ------------------------------
+// // setting up the interval count and displaying in frontend
 // function to_check_synchronous() {
 //     let name = prompt("Enter your name");
 //     let address = prompt("Enter your address");
 
 //     let l = "Loading...";
 //     console.log(l);
-//     document.getElementById("idSynchronousThree").innerHTML = l;
+//     document.getElementById("idSynchronousSix").innerHTML = l;
 
 //     // initializing
 //     let intervalCount = 0;
@@ -109,52 +120,80 @@
 //         document.getElementById("idSynchronous").innerHTML = NewName;
 //         document.getElementById("idSynchronousTwo").innerHTML = NewAddress;
 //         // display none
-//         document.getElementById("idSynchronousThree").style.display = "none";
+//         document.getElementById("idSynchronousSix").style.display = "none";
 
 //         //intervalCount
 //         document.getElementById("idSynchronousFour").innerHTML = `Interval Count: ${intervalCount}`;
 //     }, 1000)
 // }
-// ------------------------------ ⬇️8⬇️ ------------------------------
-// setting up the setTimeout to stop interval
+
+// ------------------------------ ⬇️9⬇️ ------------------------------
+// // setting up the setTimeout to stop interval
+// function to_check_synchronous() {
+//     let name = prompt("Enter your name");
+//     let address = prompt("Enter your address");
+
+//     let loading = "Loading...";
+//     console.log(loading);
+//     document.getElementById("idSynchronousSix").innerHTML = loading;
+
+//     // initializing
+//     let intervalCount = 0;
+
+//     let interval = setInterval(function () {
+//         // Increment the interval count by 1
+//         intervalCount += 1;
+
+//         let NewName = `${name}`;
+//         let NewAddress = `${address}`;
+//         console.log(NewName, NewAddress);
+
+//         document.getElementById("idSynchronous").innerHTML = NewName;
+//         document.getElementById("idSynchronousTwo").innerHTML = NewAddress;
+//         // display none (Loading...)
+//         document.getElementById("idSynchronousSix").style.display = "none";
+
+//         //intervalCount
+//         document.getElementById("idSynchronousFour").innerHTML = `Interval Count: ${intervalCount}`;
+//     }, 1000)
+
+//     // setting up clearInterval
+//     setTimeout(function () {
+//         clearInterval(interval);
+//         let clearedInterval = "Interval Cleared";
+//         console.log(clearedInterval);
+//         document.getElementById("idSynchronousFive").innerHTML = clearedInterval;
+//     }, 6000)
+// }
+
+// ------------------------------ ⬇️10⬇️ ------------------------------
+// better than 9
 function to_check_synchronous() {
     let name = prompt("Enter your name");
+    let surname = prompt("Enter your surname");
     let address = prompt("Enter your address");
 
     let loading = "Loading...";
     console.log(loading);
-    document.getElementById("idSynchronousThree").innerHTML = loading;
+    document.getElementById("idSynchronousSix").innerHTML = loading;
 
-    // initializing
     let intervalCount = 0;
-
     let interval = setInterval(function () {
-        // Increment the interval count by 1
         intervalCount += 1;
-
-        let NewName = `${name}`;
-        let NewAddress = `${address}`;
-        console.log(name, address);
-
-        document.getElementById("idSynchronous").innerHTML = NewName;
-        document.getElementById("idSynchronousTwo").innerHTML = NewAddress;
-        // display none (Loading...)
-        document.getElementById("idSynchronousThree").style.display = "none";
-
-        //intervalCount
-        document.getElementById("idSynchronousFour").innerHTML = `Interval Count: ${intervalCount}`;
+        console.log("Name:", name, surname, address);
+        document.getElementById("idSynchronous").innerHTML = `Full Name: ${name} ${surname}`;
+        document.getElementById("idSynchronousThree").innerHTML = `Interval Count: ${intervalCount}`;
+        document.getElementById("idSynchronousSix").style.display = "none";
     }, 1000)
-
-    // setting up clearInterval
+    document.getElementById("idSynchronousTwo").innerHTML = `Address: ${address}`;
     setTimeout(function () {
-        clearInterval(interval);
+        clearInterval(interval)
         let clearedInterval = "Interval Cleared";
         console.log(clearedInterval);
-        document.getElementById("idSynchronousFive").innerHTML = clearedInterval;
+        document.getElementById("idSynchronousFour").innerHTML = `Interval Cleared: ${clearedInterval}`;
     }, 6000)
 }
-// ------------------------------ ⬇️9⬇️ ------------------------------
-// ------------------------------ ⬇️10⬇️ ------------------------------
+
 // ------------------------------ ⬇️11⬇️ ------------------------------
 // ------------------------------ ⬇️12⬇️ ------------------------------
 // ------------------------------ ⬇️13⬇️ ------------------------------
