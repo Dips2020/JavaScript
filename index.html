@@ -23,7 +23,6 @@
 
     <!--! localStorage -->
     <p>-----------------------------------------------</p>
-    <script src="./JS/localStorage.js"></script>
     <div class="local-storage">
         <h1 id="idHead"></h1>
         <h1 id="idName"></h1>
@@ -33,18 +32,18 @@
         <!-- to clear local storage I have made a separate function in local storage -->
         <button onclick="ClearLocalStorage()">Clear Local Storage</button>
     </div>
+    <script src="./JS/localStorage.js"></script>
 
     <!--! Async_Await -->
     <p>-----------------------------------------------</p>
-    <script src="./JS/async_await.js"></script>
     <div class="async-await">
         <button onclick="AsyncAwait()">Async-Await</button>
         <p id="idAsyncAwait"></p>
     </div>
+    <script src="./JS/async_await.js"></script>
 
     <!--! Asynchronous -->
     <p>-----------------------------------------------</p>
-    <script src="./JS/Asynchronous.js"></script>
     <div class="asynchronous">
         <button onclick="to_check_asynchronous()">Check Asynchronous</button>
         <p id="idSynchronousSix"></p>
@@ -54,10 +53,10 @@
         <p id="idSynchronousFour"></p>
         <p id="idSynchronousFive"></p>
     </div>
+    <script src="./JS/Asynchronous.js"></script>
 
     <!--! Callbacks -->
     <p>-----------------------------------------------</p>
-    <script src="./JS/Callbacks.js"></script>
     <div class="callbacks">
         <button onclick="to_check_callBack()">Callback</button>
         <h1 id="idCallback"></h1>
@@ -66,10 +65,10 @@
         <p id="idParagraph"></p>
         <p id="idParagraphTwo"></p>
     </div>
+    <script src="./JS/Callbacks.js"></script>
 
     <!--! Conditional -->
     <p>-----------------------------------------------</p>
-    <script src="./JS/Conditional.js"></script>
     <div class="conditional">
         <button onclick="conditional()">Conditional</button>
         <h1 id="idConditional"></h1>
@@ -77,6 +76,30 @@
         <p id="idConditionalPara"></p>
         <p id="idConditionalParaTwo"></p>
     </div>
+    <script src="./JS/Conditional.js"></script>
+
+    <!--! Events -->
+    <p>-----------------------------------------------</p>
+    <div class="Events">
+        <button id="clickEvents">Events</button>
+        <p id="dateTimes">To check date time, click 'Events' button.</p>
+        <button id="clickHello">Hello</button>
+        <h1 id="idEvent">Click in 'Hello' button.</h1>
+        <h1 id="idEventTwo"></h1>
+        <button onclick="change()">Change</button>
+        <p id="idEventPara">This sentence will be changed when you click the 'Change' button.</p>
+        <p id="idEventParaTwo"></p>
+        <button onclick="this.innerHTML=Date()">Todays date and time</button>
+        <p onclick="this.innerHTML = 'DiPS is here.'">Click on this sentence.</p>
+    </div>
+    <script src="./JS/Events.js"></script>
+
+    <!--! Error Handling -->
+    <p>-----------------------------------------------</p>
+    <div>
+
+    </div>
+    <script src=""></script>
 </body>
 
 </html>
