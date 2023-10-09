@@ -11,7 +11,7 @@ dateTime.addEventListener('click', function () {
 // ------------------------------ ⬇️2⬇️ ------------------------------
 function change() {
     let para = document.getElementById("idEventPara");
-    para.textContent = "This is new content";
+    para.textContent = "This is new content changed due to (.textContent) from JS";
 }
 
 // ------------------------------ ⬇️3⬇️ ------------------------------
@@ -23,5 +23,14 @@ butt.addEventListener("click", function () {
 })
 
 // ------------------------------ ⬇️4⬇️ ------------------------------
+let sth = document.getElementById("countButton");
+let countButton = 0;
+sth.addEventListener("click", function () {
+    countButton += 1;
+    document.getElementById("idEventCountPara").innerHTML = `Button clicked count: ${countButton}`;
+    let message = "Someone is clicking";
+    console.log(message);
+    document.getElementById("idEventTwo").innerHTML = message;
+})
 // ------------------------------ ⬇️5⬇️ ------------------------------
 // ------------------------------ ⬇️6⬇️ ------------------------------
