@@ -21,22 +21,46 @@
 // }
 
 // ------------------------------ ⬇️2⬇️ ------------------------------
+// ! Using setTimeout() in callback
+// function to_check_callBack() {
+//     function sayHi() {
+//         let greet = "Hi...";
+//         console.log(greet);
+//         document.getElementById("idCallback").innerHTML = greet;
+//     }
+//     function MyFunction(callback) {
+//         console.log(name, address)
+//         callback();
+//     }
+//     setTimeout(() => {
+//         MyFunction(sayHi);
+//     }, 0)
+//     let name = prompt("Enter your full name");
+//     let address = prompt("Enter your address");
+//     document.getElementById("idCallbackTwo").innerHTML = `Full Name: ${name} <br> Address: ${address}`;
+// }
+
+// ------------------------------ ⬇️3⬇️ ------------------------------
+// ! without setTimeout()
 function to_check_callBack() {
     function sayHi() {
-        let greet = "Hi...";
-        console.log(greet);
-        document.getElementById("idCallback").innerHTML = greet;
+        let message = "Hi...";
+        console.log(message);
+        document.getElementById("idCallback").innerHTML = message;
     }
-    function MyFunction(callback) {
-        console.log(name, address)
+    function MyFunction(name, address, age, callback) {
+        console.log(name, address, age);
+        document.getElementById("idCallbackTwo").innerHTML = `Name: ${name} <br> Address: ${address} <br> Age: ${age}`;
         callback();
     }
-    setTimeout(() => {
-        MyFunction(sayHi);
-    }, 0)
-    let name = prompt("Enter your full name");
-    let address = prompt("Enter your address");
-    document.getElementById("idCallbackTwo").innerHTML = `Full Name: ${name} <br> Address: ${address}`;
+    let name = prompt("What's your name?");
+    let address = prompt("Where do you live?");
+    let age = Number(prompt("How old are you?"));
+    //calling function
+    MyFunction(name, address, age, sayHi);
 }
-// ------------------------------ ⬇️3⬇️ ------------------------------
+
 // ------------------------------ ⬇️4⬇️ ------------------------------
+// ------------------------------ ⬇️5⬇️ ------------------------------
+// ------------------------------ ⬇️6⬇️ ------------------------------
+// ------------------------------ ⬇️7⬇️ ------------------------------
