@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Api Fetch</title>
+  </head>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+    th,
+    td {
+      border: 1px solid black;
+      padding: 5px;
+    }
+    img {
+      height: 30px;
+      width: auto;
+    }
+  </style>
+
+  <body>
+    <div>
+      <button id="clickButt" onclick="ClickHere()">
+        Click Here To Display
+      </button>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Flag</th>
+            <th>Population (In Millions)</th>
+            <th>Area (Square Meters)</th>
+            <th>Capital</th>
+            <th>Calling Code</th>
+            <th>Language</th>
+          </tr>
+        </thead>
+        <tbody id="countries-table-body"></tbody>
+      </table>
+    </div>
+    <!--! Script  -->
+    <script>
+      function ClickHere() {
+        async function getCountriesData() {
+          const countryData = await fetch("https://restcountries.com/v2/all");
+          const countriesData = await countryData.json();
+          return countriesData;
+        }
+        async function displayCountriesTable() {
+          const countries = await getCountriesData();
+          // console.log(countries);
+          const countriesTableBody = document.getElementById(
+            "countries-table-body"
+          );
+
+          for (let country of countries) {
+            const row = document.createElement("tr");
+            const nameCell = document.createElement("td");
+            nameCell.textContent = country.name;
+            row.appendChild(nameCell);
+
+            const flagCell = document.createElement("td");
+            const flagImg = document.createElement("img");
+            flagImg.src = country.flag;
+            flagCell.append(flagImg);
+            row.appendChild(flagCell);
+
+            const populationCell = document.createElement("tr");
+            populationCell.textContent = (country.population / 1000000).toFixed(
+              2
+            );
+            row.appendChild(populationCell);
+
+            const areaCell = document.createElement("td");
+            areaCell.textContent = country.area;
+            row.appendChild(areaCell);
+
+            const capitalCell = document.createElement("td");
+            capitalCell.textContent = country.capital;
+            row.appendChild(capitalCell);
+
+            const callingCodeCell = document.createElement("td");
+            callingCodeCell.textContent = "+" + country.callingCodes[0];
+            row.appendChild(callingCodeCell);
+
+            const languageCell = document.createElement("td");
+            const languageList = country.languages.map(
+              (language) => language.name
+            );
+            languageCell.textContent = languageList;
+            row.appendChild(languageCell);
+
+            countriesTableBody.appendChild(row);
+          }
+        }
+        displayCountriesTable();
+      }
+    </script>
+  </body>
+</html>
